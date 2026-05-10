@@ -115,6 +115,9 @@ const useFilterStore = create<StoreState & FilterStore>((set, get) => ({
 	},
 
 	setFilter: (routeKey: string, key: string, value: FilterValue): void => {
+		set((state) => {
+			const current = state.filters[routeKey] ?? loadFromSession(routeKey);
+
 			// Remove null/undefined values using rest destructuring (cleaner immutability)
 			let updated = { ...current, [key]: value };
 			if (value === null || value === undefined) {

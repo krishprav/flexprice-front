@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 yarn.lock
 package-lock.json
-.env
 .vercel
 tsconfig.tsbuildinfo
 tsconfig.app.tsbuildinfo
@@ -39,8 +38,8 @@ vite.config.js
 
 
 # env files
-.env.*
 .claude/settings.local.json
 
 # Storybook build output
 storybook-static
+config.bat
